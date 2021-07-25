@@ -6,4 +6,4 @@
 
 - Frontend: ReactJS, React-Bootstrap, React-Router-Dom
 
-- Backend: NodeJS, ExpressJS
+- Backend: NodeJS, ExpressJS, MongoDB
