@@ -2,10 +2,12 @@
   min-height: 93vh;
   display: flex;
   align-items: center;
+  /*background-image: url("../../background1.jpg");*/
   background-position: center;
   background-size: cover;
 }
 .title {
+  /*color: #6b1659;*/
   font-size: 95px;
 }
 .subtitle {
