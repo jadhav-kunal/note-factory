@@ -13,24 +13,17 @@ const LoginScreen = ({ history }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const userInfo = localStorage.getItem("userInfo");
-    if (userInfo) {
-      history.push("/mynotes");
-    }
-  }, [history]);
-
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const config = {
         headers: {
-          "Constant-type": "application/json",
+          "Content-type": "application/json",
         },
       };
       setLoading(true);
       const { data } = await axios.post(
-        "./api/users/login",
+        "/api/users/login",
         {
           email,
           password,
