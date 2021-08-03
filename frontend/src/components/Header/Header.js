@@ -35,7 +35,9 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={logoutHandler}>
+                Logout
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

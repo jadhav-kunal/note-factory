@@ -8,7 +8,7 @@ import { register } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
 import "./RegisterScreen.css";
 
-const RegisterScreen({ history }) {
+function RegisterScreen({ history }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [pic, setPic] = useState(
@@ -18,9 +18,6 @@ const RegisterScreen({ history }) {
   const [confirmpassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
   const [picMessage, setPicMessage] = useState(null);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-  
 
   const dispatch = useDispatch();
 
@@ -67,7 +64,7 @@ const RegisterScreen({ history }) {
 
     if (password !== confirmpassword) {
       setMessage("Passwords do not match");
-    // } else {dispatch(register(name, email, password, pic))};
+    } else dispatch(register(name, email, password, pic));
   };
 
   return (
