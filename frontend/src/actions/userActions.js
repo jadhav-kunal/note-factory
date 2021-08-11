@@ -13,6 +13,7 @@ import {
 import axios from "axios";
 
 export const login = (email, password) => async (dispatch) => {
+  //redux thunk enables us to nest functions
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
 
