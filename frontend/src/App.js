@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import LandingPage from "./screens/LandingPage/LandingPage";
 import MyNotes from "./screens/MyNotes/MyNotes";
 import SingleNote from "./screens/SingleNote/SingleNote";

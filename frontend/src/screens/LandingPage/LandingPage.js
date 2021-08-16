@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
-
-import "./LandingPage.css";
 import { Button, Container, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import "./LandingPage.css";
 
-const LandingPage = () => {
-  // useEffect (() => {
-  //   const userInfo = localStorage.getItem("userInfo");
-  //   if (userInfo) {
-  //     history.push("/mynotes");
-  //   }
-  // }, [history]);
+function LandingPage({ history }) {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push("/mynotes");
+    }
+  }, [history, userInfo]);
 
   return (
     <div className="main">
@@ -18,32 +21,29 @@ const LandingPage = () => {
           <div className="intro-text">
             <div>
               <h1 className="title">Welcome to Note Factory</h1>
-              <p className="subtitle">One Safe Place For All Your Notes.</p>
+              <p className="subtitle">One Safe place for all your notes.</p>
             </div>
             <div className="buttonContainer">
-              <a href="/login">
-                <Button
-                  size="lg"
-                  className="landingbutton" /*variant="success"*/
-                >
+              <Link to="/login">
+                <Button size="lg" className="landingbutton">
                   Login
                 </Button>
-              </a>
-              <a href="/Register">
+              </Link>
+              <Link to="/register">
                 <Button
+                  variant="outline-primary"
                   size="lg"
                   className="landingbutton"
-                  variant="btn btn-outline-light"
                 >
                   Signup
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </Row>
       </Container>
     </div>
   );
-};
+}
 
 export default LandingPage;
